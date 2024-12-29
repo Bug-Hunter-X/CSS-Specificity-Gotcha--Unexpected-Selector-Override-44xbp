@@ -1,0 +1,25 @@
+The solution involves either making the selectors more specific or reorganizing the rules to give precedence to the correct ones. For example, if we want the red color to apply, we need to make the second selector more specific:
+
+```css
+div.container p {
+  color: blue;
+}
+
+div.container p {
+  color: red !important; 
+}
+
+```
+This fixes the issue.  Alternatively, we can rearrange our styles, placing the more general rule after the more specific rule.
+
+```css
+div p {
+  color: red;
+}
+
+div.container p {
+  color: blue;
+}
+```
+
+In this version, the rule `div p { color: red; }` takes precedence because it's less specific than `div.container p { color: blue; }`. Therefore, choosing the correct solution depends entirely on the intended styling and how it should override others.
