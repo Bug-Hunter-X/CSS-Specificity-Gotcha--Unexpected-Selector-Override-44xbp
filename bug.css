@@ -1,0 +1,13 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+div.container p {
+  color: blue;
+}
+
+div p {
+  color: red;
+}
+```
+
+In this case, both selectors target `<p>` elements within a `<div>`. However, the selector `div.container p` is more specific because it includes a class selector (`.container`). Therefore, even if the `div p` rule comes later in the stylesheet, it will be overridden by the `div.container p` rule. This can lead to unexpected behavior if you are not aware of CSS specificity rules.
